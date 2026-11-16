@@ -1,0 +1,11 @@
+{
+  "name": "labour-management-system",
+  "version": "1.0.0",
+  "description": "Labour Management System",
+  "scripts": {
+    "start": "start.bat",
+    "dev": "start.bat",
+    "backend": "npm --prefix backend run start:dev",
+    "frontend": "npm --prefix frontend run dev"
+  }
+}
