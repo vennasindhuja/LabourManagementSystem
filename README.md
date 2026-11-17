@@ -17,6 +17,7 @@ A full-stack construction and labour management platform built with NestJS, Type
 ### 1. Prerequisites
 - [Node.js](https://nodejs.org/) (v18+)
 - [PostgreSQL](https://www.postgresql.org/) running on `localhost:5432` with a database named `testdb`.
+- Copy `backend/.env.example` to `backend/.env` and set your PostgreSQL password in `DB_PASSWORD`.
 
 ### 2. Quick Start (Windows)
 Double-click `start.bat` or run:
@@ -47,8 +48,8 @@ Frontend runs at: `http://localhost:3000`
 
 ## 📊 Modules & Features
 
-- **Dashboard**: Live metrics, attendance rates, trade breakdowns, active projects & workers.
-- **Labour Management**: Worker directory, skills/trade categorization, contact details, daily wage tracking.
-- **Projects**: Construction projects and site assignment.
-- **Attendance**: Daily check-ins, status (Present, Half-Day, Absent), overtime hours tracking.
-- **Payroll**: Automated wage calculations, status tracking (Pending, Paid), payment receipts.
+- **Dashboard**: Workforce metrics, attendance summaries, trade breakdowns, project totals, and payroll summaries.
+- **Workforce**: Search, filter, add, update, and manage worker profiles, trades, contact details, and daily wages.
+- **Attendance Muster**: Record and review worker attendance and overtime.
+- **Job Sites & Projects**: Create and manage construction projects and site details.
+- **Payroll & Wages**: Generate payroll and track worker payments.

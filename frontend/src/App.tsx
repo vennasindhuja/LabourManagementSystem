@@ -52,12 +52,12 @@ export function App() {
               {activeTab === 'dashboard'
                 ? 'Overview Dashboard'
                 : activeTab === 'labours'
-                ? 'Workforce Roster'
-                : activeTab === 'attendance'
-                ? 'Muster & Shift Log'
-                : activeTab === 'projects'
-                ? 'Construction Sites'
-                : 'Payroll & Settlements'}
+                  ? 'Workforce Roster'
+                  : activeTab === 'attendance'
+                    ? 'Muster & Shift Log'
+                    : activeTab === 'projects'
+                      ? 'Construction Sites'
+                      : 'Payroll & Settlements'}
             </h2>
           </div>
 
@@ -87,7 +87,6 @@ export function App() {
                 stats={stats}
                 loading={loadingStats}
                 onNavigate={setActiveTab}
-                onRefresh={fetchStats}
               />
             )}
 

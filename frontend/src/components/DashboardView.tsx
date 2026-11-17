@@ -4,29 +4,24 @@ import { formatCurrency, formatDate } from '../utils/formatters';
 import {
   Users,
   Building2,
-  CalendarCheck2,
   Wallet,
-  CheckCircle2,
+  CalendarCheck2,
   Clock,
-  ArrowUpRight,
-  TrendingUp,
   UserCheck,
-  AlertCircle,
   HardHat,
+  ArrowUpRight,
 } from 'lucide-react';
 
 interface DashboardViewProps {
   stats: DashboardStats | null;
   loading: boolean;
   onNavigate: (tab: 'dashboard' | 'labours' | 'attendance' | 'projects' | 'payroll') => void;
-  onRefresh: () => void;
 }
 
 export const DashboardView: React.FC<DashboardViewProps> = ({
   stats,
   loading,
   onNavigate,
-  onRefresh,
 }) => {
   if (loading || !stats) {
     return (

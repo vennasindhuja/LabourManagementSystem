@@ -1,6 +1,7 @@
 import { Module } from '@nestjs/common';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
+import { join } from 'node:path';
 import { LaboursModule } from './labours/labours.module';
 import { ProjectsModule } from './projects/projects.module';
 import { AttendanceModule } from './attendance/attendance.module';
@@ -16,7 +17,11 @@ import { Payroll } from './payroll/entities/payroll.entity';
   imports: [
     ConfigModule.forRoot({
       isGlobal: true,
-      envFilePath: '.env',
+      envFilePath: [
+        join(__dirname, '..', '.env'),
+        join(process.cwd(), 'backend', '.env'),
+        '.env',
+      ],
     }),
     TypeOrmModule.forRootAsync({
       imports: [ConfigModule],
@@ -26,7 +31,7 @@ import { Payroll } from './payroll/entities/payroll.entity';
         host: configService.get<string>('DB_HOST', '127.0.0.1'),
         port: parseInt(configService.get<string>('DB_PORT', '5432'), 10),
         username: configService.get<string>('DB_USER', 'postgres'),
-        password: configService.get<string>('DB_PASSWORD', 'Sindhuja'),
+        password: configService.getOrThrow<string>('DB_PASSWORD'),
         database: configService.get<string>('DB_NAME', 'testdb'),
         entities: [Labour, Project, Attendance, Payroll],
         synchronize: true, // auto create & sync database tables

@@ -7,8 +7,6 @@ import {
   Wallet,
   HardHat,
   Database,
-  Activity,
-  Layers,
 } from 'lucide-react';
 
 interface SidebarProps {
